@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>花卉识别系统</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./tf.2.3.0.min.js"></script>
+    <script type="text/javascript" src="./tfjs-vis.umd.min.js"></script>
+</head>
+<body>
+    <h1>花卉识别系统</h1>
+
+    <br/>
+    <input id="fileBtn" type="file" onchange="upload('#fileBtn', '#photo');" accept="image/*" multiple disabled="true" />
+    <br/><br/>
+
+    <div>
+       <img src="" id="photo" width="400" height="300" alt="还没有上传图片，请点击选择文件按钮上传图片，然后按识别按键开始识别。" style="border: 1px solid gray" />
+    </div>
+
+    <h3>状态：<span id="status">无</span></h3>
+
+    <button id="anylBtn" onclick="anylize()" disabled="true">点击识别</button>
+
+    <script>
+        // 读取上传的图片文件
+        var upload = function (c, d) {
+            var $c = document.querySelector(c),
+                $d = document.querySelector(d),
+                file = $c.files[0],
+                reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function (e) {
+                $d.setAttribute("src", e.target.result);
+            };
+        };
+    </script>
+
+
+    <script>
+        const imageData = document.getElementById('photo');
+        const status = document.getElementById('status');
+        let model = null;
+        let predictions = null;
+        let IMAGENET_CLASSES = ['小雏菊','蒲公英','玫瑰花','向日葵','郁金香'];
+
+        main()
+
+        // 绘图函数 说明文档 https://github.com/tensorflow/tfjs/tree/master/tfjs-vis
+
+        async function main () {
+            status.innerText = "模型加载中，请稍后..."
+            model = await tf.loadLayersModel('./ModelJS/model.json', { onProgress: p => {console.log(p);status.innerHTML = "数据文件的下载进度为 "+Math.floor(100 * p) +' %'} } );
+            status.innerText = "模型加载完成!"
+
+            document.getElementById("fileBtn").removeAttribute("disabled");
+            document.getElementById("anylBtn").removeAttribute("disabled");
+
+            tfvis.show.modelSummary({name: '花卉识别模型'}, model);
+        }
+
+        async function anylize(){
+            status.innerText = "开始识别，请稍后..."
+            let pixels = tf.browser.fromPixels(imageData);
+            let offset = tf.scalar(100);
+            let example = pixels.resizeNearestNeighbor([100, 100]).toFloat().sub(offset).div(offset).expandDims();
+
+            let output = await model.predict(example);
+            predictions = Array.from(output.dataSync()).map(function (p, i) {return {probabilty: p,classname: IMAGENET_CLASSES[i]};}).sort((a, b) => b.probabilty - a.probabilty).slice(0, 5);
+
+            console.log(predictions);
+
+            status.innerHTML = "识别完成!<br/>"
+
+            // 绘制图形
+            let data = predictions.map(x=>{
+                return {index:x.classname,value:x.probabilty}
+            });
+
+            tfvis.render.barchart({ name: '各种花卉的可能性', tab: '分析结果' }, data,{xLabel:"花的品种",yLabel:"可能性",});
+
+            // 在网页显示给用户
+            for(let i in predictions){
+                let percentage = Math.floor(100 * predictions[i].probabilty)
+                let className = predictions[i].classname
+                status.innerHTML += percentage + '%' + ' ' + className +"<br/>"
+            }
+
+            pixels.dispose();
+            offset.dispose();
+            example.dispose();
+            output.dispose();
+        }
+
+    </script>
+
+</body>
+</html>

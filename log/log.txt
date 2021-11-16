@@ -1,0 +1,92 @@
+runfile('E:/tensorflow/flower-photos/flower_photos.py', wdir='E:/tensorflow/flower-photos')
+Reloaded modules: tmpj14oq3_p
+shape of data: (3670, 100, 100, 3)
+shape of label: (3670,)
+Epoch 1/20
+15/15 - 51s - loss: 1.5350 - accuracy: 0.3168 - val_loss: 1.4787 - val_accuracy: 0.3883
+Epoch 2/20
+15/15 - 50s - loss: 1.3490 - accuracy: 0.4278 - val_loss: 1.3152 - val_accuracy: 0.4564
+Epoch 3/20
+15/15 - 48s - loss: 1.2274 - accuracy: 0.4605 - val_loss: 1.2517 - val_accuracy: 0.4700
+Epoch 4/20
+15/15 - 48s - loss: 1.1617 - accuracy: 0.5065 - val_loss: 1.2497 - val_accuracy: 0.4659
+Epoch 5/20
+15/15 - 48s - loss: 1.1199 - accuracy: 0.5208 - val_loss: 1.2085 - val_accuracy: 0.4714
+Epoch 6/20
+15/15 - 47s - loss: 1.0799 - accuracy: 0.5637 - val_loss: 1.2019 - val_accuracy: 0.4714
+Epoch 7/20
+15/15 - 52s - loss: 1.0537 - accuracy: 0.5753 - val_loss: 1.2275 - val_accuracy: 0.4496
+Epoch 8/20
+15/15 - 56s - loss: 1.0360 - accuracy: 0.5838 - val_loss: 1.2219 - val_accuracy: 0.4564
+Epoch 9/20
+15/15 - 57s - loss: 1.0206 - accuracy: 0.5858 - val_loss: 1.1702 - val_accuracy: 0.5027
+Epoch 10/20
+15/15 - 58s - loss: 1.0210 - accuracy: 0.5950 - val_loss: 1.1611 - val_accuracy: 0.5286
+Epoch 11/20
+15/15 - 55s - loss: 0.9960 - accuracy: 0.6029 - val_loss: 1.1515 - val_accuracy: 0.5027
+Epoch 12/20
+15/15 - 60s - loss: 0.9619 - accuracy: 0.6189 - val_loss: 1.2174 - val_accuracy: 0.4782
+Epoch 13/20
+15/15 - 54s - loss: 0.9532 - accuracy: 0.6257 - val_loss: 1.2341 - val_accuracy: 0.4605
+Epoch 14/20
+15/15 - 52s - loss: 0.9250 - accuracy: 0.6393 - val_loss: 1.2159 - val_accuracy: 0.4850
+Epoch 15/20
+15/15 - 53s - loss: 0.9058 - accuracy: 0.6410 - val_loss: 1.1454 - val_accuracy: 0.5218
+Epoch 16/20
+15/15 - 51s - loss: 0.9080 - accuracy: 0.6441 - val_loss: 1.1794 - val_accuracy: 0.5014
+Epoch 17/20
+15/15 - 51s - loss: 0.8849 - accuracy: 0.6614 - val_loss: 1.1756 - val_accuracy: 0.5109
+Epoch 18/20
+15/15 - 52s - loss: 0.8505 - accuracy: 0.6822 - val_loss: 1.1911 - val_accuracy: 0.5109
+Epoch 19/20
+15/15 - 51s - loss: 0.8395 - accuracy: 0.6792 - val_loss: 1.2172 - val_accuracy: 0.5082
+Epoch 20/20
+15/15 - 53s - loss: 0.8186 - accuracy: 0.6764 - val_loss: 1.2107 - val_accuracy: 0.5054
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_4 (Conv2D)            (None, 100, 100, 32)      2432      
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 50, 50, 32)        0         
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 50, 50, 32)        0         
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 50, 50, 64)        18496     
+_________________________________________________________________
+conv2d_6 (Conv2D)            (None, 50, 50, 64)        36928     
+_________________________________________________________________
+max_pooling2d_4 (MaxPooling2 (None, 25, 25, 64)        0         
+_________________________________________________________________
+dropout_4 (Dropout)          (None, 25, 25, 64)        0         
+_________________________________________________________________
+conv2d_7 (Conv2D)            (None, 25, 25, 128)       73856     
+_________________________________________________________________
+max_pooling2d_5 (MaxPooling2 (None, 13, 13, 128)       0         
+_________________________________________________________________
+dropout_5 (Dropout)          (None, 13, 13, 128)       0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 21632)             0         
+_________________________________________________________________
+dense_3 (Dense)              (None, 512)               11076096  
+_________________________________________________________________
+dense_4 (Dense)              (None, 256)               131328    
+_________________________________________________________________
+dense_5 (Dense)              (None, 5)                 1285      
+=================================================================
+Total params: 11,340,421
+Trainable params: 11,340,421
+Non-trainable params: 0
+_________________________________________________________________
+
+
+
+图表现在默认显示于绘图窗格上。要想让其也在中断行中显示，请在绘图窗格选项菜单中取消勾选“禁用行内绘图”。 
+
+
+ reading the images:./testimages\test1.jpg
+shape of data: (1, 100, 100, 3)
+WARNING:tensorflow:From E:\tensorflow\flower-photos\flower_photos.py:119: Sequential.predict_classes (from tensorflow.python.keras.engine.sequential) is deprecated and will be removed after 2021-01-01.
+Instructions for updating:
+Please use instead:* `np.argmax(model.predict(x), axis=-1)`,   if your model does multi-class classification   (e.g. if it uses a `softmax` last-layer activation).* `(model.predict(x) > 0.5).astype("int32")`,   if your model does binary classification   (e.g. if it uses a `sigmoid` last-layer activation).
+第 1 朵花预测：roses
