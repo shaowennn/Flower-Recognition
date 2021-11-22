@@ -5,7 +5,7 @@
 
 ## 演示视频
 <a href="https://github.com/shaowennn/Flower-Recognition/blob/website/video/flower_recognition.mp4?raw=true" target="_blanck">查看演示视频</a>
-<video src="https://github.com/shaowennn/Flower-Recognition/blob/website/video/flower_recognition.mp4" width="480" height="360"></video>
+<video src="https://user-images.githubusercontent.com/49789119/142876156-eb88a216-4fb7-4dcd-8484-372ebfb5c297.MP4" width="480" height="360"></video>
 
 ## 附带一些测试用例图片
   |  Class  |   Sample              |
