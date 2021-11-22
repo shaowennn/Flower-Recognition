@@ -4,7 +4,7 @@
 <a href="https://shaowennn.github.io/Flower-Recognition/" target="_blanck">在线体验地址</a>
 
 ## 演示视频
-<video src=""/>
+<video src="https://shaowennn.github.io/Flower-Recognition/video/video.MP4"/>
 
 ## 附带一些测试用例图片
 <a href="">测试图</a>
