@@ -7,4 +7,7 @@
 <video src="/video/video.MP4" controls="controls" width="480" height="360"></video>
 
 ## 附带一些测试用例图片
-<a href="">测试图</a>
+  |  Class             |   Sample                                                 |
+  | ------------------ | -------------------------------------------------------- |
+  |  Rose              |   <img src="/testimages/rose%20(1).jpg" />               |
+  |  Rose              |   <img src="/testimages/rose%20(2).jpg" />               |
