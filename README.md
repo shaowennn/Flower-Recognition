@@ -4,8 +4,8 @@
 <a href="https://shaowennn.github.io/Flower-Recognition/" target="_blanck">在线体验地址</a>
 
 ## 演示视频
-<a href="https://github.com/shaowennn/Flower-Recognition/blob/website/video/video_BiliBili.mp4?raw=true" target="_blanck">查看演示视频</a>
-<video src="https://github.com/shaowennn/Flower-Recognition/blob/website/video/video_BiliBili.mp4" width="480" height="360"></video>
+<a href="https://github.com/shaowennn/Flower-Recognition/blob/website/video/flower_recognition.mp4?raw=true" target="_blanck">查看演示视频</a>
+<video src="https://github.com/shaowennn/Flower-Recognition/blob/website/video/flower_recognition.mp4" width="480" height="360"></video>
 
 ## 附带一些测试用例图片
   |  Class  |   Sample              |
