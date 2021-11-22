@@ -7,7 +7,20 @@
 <video src="/video/video.MP4" controls="controls" width="480" height="360"></video>
 
 ## 附带一些测试用例图片
-  |  Class             |   Sample                                                 |
-  | ------------------ | -------------------------------------------------------- |
-  |  Rose              |   <img src="/testimages/rose%20(1).jpg" />               |
-  |  Rose              |   <img src="/testimages/rose%20(2).jpg" />               |
+  |  Class  |   Sample              |
+  | ------- | -------------------------------------------------------- |
+  |  Rose   |   <img witdh="80" height="60" src="/testimages/rose%20(1).jpg" /> |
+  |  Rose   |   <img witdh="80" height="60" src="/testimages/rose%20(2).jpg" /> |
+  |  Rose   |   <img witdh="80" height="60" src="/testimages/rose%20(3).jpg" /> |
+  |  Dandelion    |   <img witdh="80" height="60" src="/testimages/dandelion%20(1).jpg" /> |
+  |  Dandelion    |   <img witdh="80" height="60" src="/testimages/dandelion%20(2).jpg" /> |
+  |  Dandelion    |   <img witdh="80" height="60" src="/testimages/dandelion%20(3).jpg" /> |
+  |  Sunflowers    |   <img witdh="80" height="60" src="/testimages/sunflowers%20(1).jpg" /> |
+  |  Sunflowers    |   <img witdh="80" height="60" src="/testimages/sunflowers%20(2).jpg" /> |
+  |  Sunflowers    |   <img witdh="80" height="60" src="/testimages/sunflowers%20(3).jpg" /> |
+  |  Daisy    |   <img witdh="80" height="60" src="/testimages/daisy%20(1).jpg" /> |
+  |  Daisy    |   <img witdh="80" height="60" src="/testimages/daisy%20(2).jpg" /> |
+  |  Daisy    |   <img witdh="80" height="60" src="/testimages/daisy%20(3).jpg" /> |
+  |  Tulip    |   <img witdh="80" height="60" src="/testimages/daisy%20(8).jpg" /> |
+  |  Tulip    |   <img witdh="80" height="60" src="/testimages/daisy%20(9).jpg" /> |
+  |  Tulip    |   <img witdh="80" height="60" src="/testimages/daisy%20(12).jpg" /> |
